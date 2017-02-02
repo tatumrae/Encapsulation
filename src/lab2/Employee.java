@@ -92,7 +92,11 @@ public class Employee {
     // allowed through validation.
     
     public void setFirstName(String firstName) {
+        if (firstName == null || firstName.length() > 2) {
+            System.out.println("Sorry, invalid first name entry. Please re-enter a first name with at least TWO characters.");
+        } else {
        this.firstName = firstName;
+        }
     }
 
     public String getLastName() {
@@ -100,7 +104,11 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
+       if (lastName == null || lastName.length() > 2) {
+            System.out.println("Sorry, invalid last name entry. Please re-enter a last name with at least TWO characters.");
+        } else {
        this.lastName = lastName;
+        }
     }
 
     public String getSsn() {
@@ -108,7 +116,11 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        this.ssn = ssn;
+        if (ssn == null || ssn.length() != 9 || !(ssn.matches("[0-9]+"))) {
+            System.out.println("Sorry, invalid social security number! Please re-enter NINE NUMBERS and try again. Remember, you don't need to enter dashes.");
+        } else {
+            this.ssn = ssn;
+        }
     }
 
     public boolean isMetWithHr() {
@@ -150,7 +162,12 @@ public class Employee {
 
     
     public void setCubeId(String cubeId) {
-        this.cubeId = cubeId;
+        if (cubeId.matches("[0-9]+")) {
+            this.cubeId = cubeId;
+        } else {
+            System.out.println("Sorry, invalid cube ID number! Please re-enter ONLY NUMBERS.");
+        }
+        
     }
 
     public Date getOrientationDate() {
