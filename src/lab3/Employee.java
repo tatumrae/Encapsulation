@@ -53,7 +53,7 @@ public class Employee {
         setFirstName(firstName);
         setLastName(lastName);
         setSsn(ssn);
-        rs = new ReportService(this);
+        rs = new ReportService();
     }
 
     /* 
@@ -89,7 +89,7 @@ public class Employee {
     // and should only be called as part of the larger task of:
     private void meetWithHrForBenefitAndSalryInfo() {
         metWithHr = true;
-        rs.reportMetWithHR(getFormattedDate());
+        rs.doOutput(firstName + " " + lastName + " met with Hr on " + getFormattedDate());
     }
 
     // Assume this must be performed first, and assume that an employee
@@ -99,7 +99,7 @@ public class Employee {
     // doFirtTimeOrientation()
     private void meetDepartmentStaff() {
         metDeptStaff = true;
-        rs.reportMetDepartmentStaff(getFormattedDate());
+        rs.doOutput(firstName + " " + lastName + " met with Department Staff on " + getFormattedDate());
     }
 
     // Assume this must be performed third. And assume that because department
@@ -107,7 +107,7 @@ public class Employee {
     // independently from other classes.
     public void reviewDeptPolicies() {
         reviewedDeptPolicies = true;
-        rs.reportReviewedDeptPolicies(getFormattedDate());
+        rs.doOutput(firstName + " " + lastName + " reviewed Dept policies on " + getFormattedDate());
     }
 
     // Assume this must be performed 4th. And assume that because employees
@@ -116,7 +116,7 @@ public class Employee {
     public void moveIntoCubicle(String cubeId) {
         this.cubeId = cubeId;
         this.movedIn = true;
-        rs.reportMovedIntoCubicle(getFormattedDate(), cubeId);
+        rs.doOutput(firstName + " " + lastName + " moved into cubicle " + cubeId + " on " + getFormattedDate());
     }
 
     public String getFirstName() {
