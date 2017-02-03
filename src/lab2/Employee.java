@@ -175,5 +175,9 @@ public class Employee {
     }
 
     public void setOrientationDate(Date orientationDate) {
-        this.orientationDate = orientationDate;
+        if (ssn == null) {
+            System.out.println("Sorry, you must enter an orientation date.");
+        } else {
+            this.orientationDate = orientationDate;
+        }
     }}
