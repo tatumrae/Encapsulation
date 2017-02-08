@@ -165,8 +165,7 @@ public class Employee {
 
     public void setSsn(String ssn) {
         if(ssn == null || ssn.length() < 9 || ssn.length() > 11) {
-            throw new IllegalArgumentException("ssn"  + REQUIRED_MSG 
-                    + "and must be between 9 and 11 characters (if hyphens are used)");
+            throw new IllegalArgumentException("ssn"  + REQUIRED_MSG + "and must be between 9 and 11 characters (if hyphens are used)");
         }
         this.ssn = ssn;
     }
