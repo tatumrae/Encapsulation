@@ -16,7 +16,7 @@ public class Company {
     }
     public void hireEmployee(String firstName, String lastName, String ssn, String cubeID) {
         hr.hireEmployee(firstName, lastName, ssn, cubeID);
-        hr.outputReport(ssn);
+        hr.outputReport(hr.getEmployee());
     }
 
     public String getCompanyName() {
